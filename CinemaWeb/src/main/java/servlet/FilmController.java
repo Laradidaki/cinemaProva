@@ -20,7 +20,7 @@ import oggetti.Film;
 /**
  * Servlet implementation class FilmController
  */
-@WebServlet("/filmcontroller")
+@WebServlet("/listafilm")
 public class FilmController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -54,7 +54,7 @@ public class FilmController extends HttpServlet {
 			
 			resultSet.close();
 			request.setAttribute("listafilm", lista2);
-			request.getRequestDispatcher("jspcorrette/listaFilm.jsp").forward(request, response);
+			request.getRequestDispatcher("/listaFilm.jsp").forward(request, response);
 				
 		}
 		catch(Exception e){

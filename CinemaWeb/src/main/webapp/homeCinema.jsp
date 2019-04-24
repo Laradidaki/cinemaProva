@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Bootstrap CSS -->
+<jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <jsp:include page="frammenti/html/bootstrap.html"></jsp:include>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Insert title here</title>
 <style type="text/css">
-
+<jsp:include page="frammenti/css/navbar.css"></jsp:include>
 </style>
 </head>
 <body>

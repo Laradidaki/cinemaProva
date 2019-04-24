@@ -6,9 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Film</title>
+<jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <style type="text/css">
-<jsp:include page="../frammenti/css/table.css"></jsp:include>
-
+<jsp:include page="frammenti/css/table.css"></jsp:include>
+<jsp:include page="frammenti/css/navbar.css"></jsp:include>
 </style>
 
 </head>
@@ -32,6 +33,8 @@
 	
 					<td><c:out value="${f.idFilm}" /></td>
 					<td><c:out value="${f.nomeFilm}" /></td>
+					<td><button type="submit">Modifica</button>
+					<td><button type="submit">Elimina</button>
 					
 </tr>
 

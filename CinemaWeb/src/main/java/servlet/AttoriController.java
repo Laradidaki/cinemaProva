@@ -21,8 +21,8 @@ import oggetti.Attore;
 
 
 
-@WebServlet("/listafilm")
-public class DBCinemaController extends HttpServlet {
+@WebServlet("/listaattori")
+public class AttoriController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	String query;
@@ -59,7 +59,7 @@ public class DBCinemaController extends HttpServlet {
 			
 			resultSet.close();
 			request.setAttribute("listaattori", lista);
-			request.getRequestDispatcher("jspcorrette/listaAttori.jsp").forward(request, response);
+			request.getRequestDispatcher("/listaAttori.jsp").forward(request, response);
 				
 		}
 		catch(Exception e){

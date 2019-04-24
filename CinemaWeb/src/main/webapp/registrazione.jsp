@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registrazione</title>
+<jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <jsp:include page="frammenti/html/bootstrap.html"></jsp:include>
 <Style type="text/css">
 h1{

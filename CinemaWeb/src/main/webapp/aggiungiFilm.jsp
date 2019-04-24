@@ -5,6 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<jsp:include page="frammenti/html/navbar.html"></jsp:include>
+<style type="text/css">
+</style>
 </head>
 <body>
 <form action="<%= request.getContextPath()+"/aggiungifilm" %>" method="post">

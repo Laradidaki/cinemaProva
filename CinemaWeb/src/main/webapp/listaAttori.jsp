@@ -7,11 +7,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Attori</title>
+<jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <style type="text/css">
-<jsp:include page="../frammenti/css/table.css"></jsp:include>
-
+<jsp:include page="frammenti/css/table.css"></jsp:include>
+<jsp:include page="frammenti/css/navbar.css"></jsp:include>
 </style>
-
 </head>
 <body>
 	

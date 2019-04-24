@@ -21,12 +21,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>DBCinemaController</display-name>
-    <servlet-name>DBCinemaController</servlet-name>
-    <servlet-class>servlet.DBCinemaController</servlet-class>
+    <display-name>AttoriController</display-name>
+    <servlet-name>AttoriController</servlet-name>
+    <servlet-class>servlet.AttoriController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DBCinemaController</servlet-name>
+    <servlet-name>AttoriController</servlet-name>
     <url-pattern>/cinema</url-pattern>
   </servlet-mapping>
   <servlet>

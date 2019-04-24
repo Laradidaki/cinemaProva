@@ -6,23 +6,25 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 <jsp:include page="frammenti/html/bootstrap.html"></jsp:include>
+<jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <style type="text/css">
+
 h1{
 font-size: 45px;
 margin-left:630px;
 margin-top: 40px;
 color:white}
-body {
+.back {
   background-image: url("frammenti/drive2.jpg");
    background-repeat: no-repeat;
    background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed !important;
 }
 label{
 color: white !important;}
 </style>
 </head>
-<body>
+<body class="back">
 <h1>Login</h1>
 <form action="<%= request.getContextPath()+"/login" %>" method="post">
     <div class="col-md-3 mb-3" style="margin-left:530px; margin-top: 50px;">
@@ -31,7 +33,7 @@ color: white !important;}
     </div>
     <div class="col-md-3 mb-3" style="margin-left:530px;">
       <label for="validationCustomPassword">Password</label>
-      <input type="text" class="form-control"  name="password" id="validationCustomPassword" placeholder="Inserisci la tua password" required>
+      <input type="password" class="form-control"  name="password" id="validationCustomPassword" placeholder="Inserisci la tua password" required>
     
     </div>
    <button class="btn btn-primary" type="submit" name="login" value="Login" style="margin-left:660px;margin-top:30px;">Login</button>
