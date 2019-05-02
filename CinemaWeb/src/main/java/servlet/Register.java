@@ -16,8 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import oggetti.Attore;
-import oggetti.Utente;
+import model.Attore;
+import model.Utente;
+import servletvecchie.DBConnection;
 
 
 @WebServlet("/registrazione")

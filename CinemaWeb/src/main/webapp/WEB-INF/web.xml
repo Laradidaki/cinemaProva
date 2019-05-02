@@ -79,4 +79,34 @@
     <servlet-name>LoginNuovo</servlet-name>
     <url-pattern>/LoginNuovo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AttoreController</display-name>
+    <servlet-name>AttoreController</servlet-name>
+    <servlet-class>servlet.AttoreController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AttoreController</servlet-name>
+    <url-pattern>/AttoreController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MovieController</display-name>
+    <servlet-name>MovieController</servlet-name>
+    <servlet-class>servlet.MovieController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MovieController</servlet-name>
+    <url-pattern>/MovieController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistaController</display-name>
+    <servlet-name>RegistaController</servlet-name>
+    <servlet-class>servlet.RegistaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistaController</servlet-name>
+    <url-pattern>/RegistaController</url-pattern>
+  </servlet-mapping>
 </web-app>

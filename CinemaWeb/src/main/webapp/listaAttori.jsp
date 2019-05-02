@@ -8,6 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Attori</title>
 <jsp:include page="frammenti/html/navbar.html"></jsp:include>
+<jsp:include page="frammenti/html/bootstrap.html"></jsp:include>
 <style type="text/css">
 <jsp:include page="frammenti/css/table.css"></jsp:include>
 <jsp:include page="frammenti/css/navbar.css"></jsp:include>
@@ -22,27 +23,27 @@
 <th>Nome Attore</th>
 <th>Cognome Attore</th>
 <th>Età Attore</th>
+<th colspan=2>Action</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td colspan="4">&nbsp;</td>
-</tr>
-</tfoot>
+
 <tbody>
-	<c:forEach  items= "${listaattori}" var="a">
+	<c:forEach  items= "${attori}" var="attore">
 <tr>
 	
 	
-					<td><c:out value="${a.idAttore}" /></td>
-					<td><c:out value="${a.nomeAttore}" /></td>
-					<td><c:out value="${a.cognomeAttore}" /></td>
-					<td><c:out value="${a.etaAttore}" /></td>
+					<td><c:out value="${attore.idAttore}" /></td>
+					<td><c:out value="${attore.nomeAttore}" /></td>
+					<td><c:out value="${attore.cognomeAttore}" /></td>
+					<td><c:out value="${attore.etaAttore}" /></td>
+					 <td><a href="AttoreController?action=edit&idAttore=<c:out value="${attore.idAttore}"/>">Update</a></td>
+                    <td><a href="AttoreController?action=delete&idAttore=<c:out value="${attore.idAttore}"/>" onclick="return confirm('conferma cancellazione di ${attore.cognomeAttore}?')">Delete</a></td>
 					
 </tr>
 
 </c:forEach>
 </tbody>
 </table>
+ <p><a href="AttoreController?action=insert">Aggiungi Attore</a></p>
 </body>
 </html>
