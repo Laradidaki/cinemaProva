@@ -26,8 +26,8 @@ public class FilmDao {
 	            // Parameters start with 1
 	            preparedStatement.setString(1, film.getNomeFilm());
 	            preparedStatement.setString(2, film.getDurataFilm());
-	            preparedStatement.setString(3, film.getAnnoFilm());
-	            preparedStatement.setString(4, film.getCostoFilm());
+	            preparedStatement.setInt(3, film.getAnnoFilm());
+	            preparedStatement.setDouble(4, film.getCostoFilm());
 	            preparedStatement.executeUpdate();
 
 	        } catch (SQLException e) {
@@ -57,8 +57,8 @@ public class FilmDao {
 	           
 	            preparedStatement.setString(1,film.getNomeFilm());
 	            preparedStatement.setString(2, film.getDurataFilm());
-	            preparedStatement.setString(3, film.getAnnoFilm());
-	            preparedStatement.setString(4, film.getCostoFilm());
+	            preparedStatement.setInt(3, film.getAnnoFilm());
+	            preparedStatement.setDouble(4, film.getCostoFilm());
 	            preparedStatement.setInt(5, film.getIdFilm());
 	            
 	            preparedStatement.executeUpdate();
@@ -78,8 +78,8 @@ public class FilmDao {
 	                film.setIdFilm(rs.getInt("idFilm"));
 	                film.setNomeFilm(rs.getString("nomeFilm"));
 	                film.setDurataFilm(rs.getString("durataFilm"));
-	                film.setAnnoFilm(rs.getString("annoFilm"));
-	                film.setCostoFilm(rs.getString("costoFilm"));
+	                film.setAnnoFilm(rs.getInt("annoFilm"));
+	                film.setCostoFilm(rs.getDouble("costoFilm"));
 	                movies.add(film);
 	            }
 	        } catch (SQLException e) {
@@ -101,8 +101,8 @@ public class FilmDao {
 	            	    film.setIdFilm(rs.getInt("idFilm"));
 		                film.setNomeFilm(rs.getString("nomeFilm"));
 		                film.setDurataFilm(rs.getString("durataFilm"));
-		                film.setAnnoFilm(rs.getString("annoFilm"));
-		                film.setCostoFilm(rs.getString("costoFilm"));
+		                film.setAnnoFilm(rs.getInt("annoFilm"));
+		                film.setCostoFilm(rs.getDouble("costoFilm"));
 	            }
 	        } catch (SQLException e) {
 	            e.printStackTrace();

@@ -109,4 +109,14 @@
     <servlet-name>RegistaController</servlet-name>
     <url-pattern>/RegistaController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DettaglioController</display-name>
+    <servlet-name>DettaglioController</servlet-name>
+    <servlet-class>servlet.DettaglioController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DettaglioController</servlet-name>
+    <url-pattern>/DettaglioController</url-pattern>
+  </servlet-mapping>
 </web-app>

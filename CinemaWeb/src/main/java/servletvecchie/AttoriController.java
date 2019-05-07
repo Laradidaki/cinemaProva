@@ -50,7 +50,7 @@ public class AttoriController extends HttpServlet {
 				a.setIdAttore(resultSet.getInt(1));
 				a.setNomeAttore(resultSet.getString(2));
 				a.setCognomeAttore(resultSet.getString(3));
-				a.setEtaAttore(resultSet.getString(4));
+				a.setEtaAttore(resultSet.getInt(4));
 				lista.add(a);
 			}
 		

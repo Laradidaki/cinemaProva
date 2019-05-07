@@ -16,7 +16,7 @@ margin-top:150px
 </style>
 </head>
 <body>
-<img src="frammenti/boh.jpg" class="center">
+<img src="immagini/boh.jpg" class="center">
 <p>La registrazione è andata a buon fine</p>
   <button class="btn btn-primary" type="submit" value="registrati" style="margin-left:645px;margin-top:30px;" onclick="location.href='homeCinema.jsp'">Home</button>
 

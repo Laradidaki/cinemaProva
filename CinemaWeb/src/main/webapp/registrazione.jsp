@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Akronim|Sofia|Stylish" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Registrazione</title>
 <jsp:include page="frammenti/html/navbar.html"></jsp:include>
@@ -13,7 +14,7 @@ margin-top:30px;
 margin-left:530px;
 font-size:45px;}
 body {
-  background-image: url("frammenti/inception.jpg");
+  background-image: url("immagini/inception.jpg");
    background-repeat: no-repeat;
    background-size: cover;
     background-attachment: fixed;

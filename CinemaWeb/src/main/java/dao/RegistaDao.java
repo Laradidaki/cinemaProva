@@ -27,7 +27,7 @@ public class RegistaDao {
 	            // Parameters start with 1
 	            preparedStatement.setString(1, regista.getNomeRegista());
 	            preparedStatement.setString(2, regista.getCognomeRegista());
-	            preparedStatement.setString(3, regista.getEtaRegista());
+	            preparedStatement.setInt(3, regista.getEtaRegista());
 	            preparedStatement.executeUpdate();
 
 	        } catch (SQLException e) {
@@ -51,13 +51,12 @@ public class RegistaDao {
 	    public void updateRegista(Regista regista) {
 	        try {
 	            PreparedStatement preparedStatement = connection
-	                    .prepareStatement("update regista set nomeRegista=?, cognomeRegista=?, etaRegista=?" +
-	                            "where idRegista=?");
+	                    .prepareStatement("update regista set nomeRegista=?, cognomeRegista=?, etaRegista=? where idRegista=?");
 	            // Parameters start with 1
 	           
 	            preparedStatement.setString(1,regista.getNomeRegista());
 	            preparedStatement.setString(2, regista.getCognomeRegista());
-	            preparedStatement.setString(3, regista.getEtaRegista());
+	            preparedStatement.setInt(3, regista.getEtaRegista());
 	            preparedStatement.setInt(4, regista.getIdRegista());
 	            
 	            preparedStatement.executeUpdate();
@@ -77,7 +76,7 @@ public class RegistaDao {
 	                regista.setIdRegista(rs.getInt("idRegista"));
 	                regista.setNomeRegista(rs.getString("nomeRegista"));
 	                regista.setCognomeRegista(rs.getString("cognomeRegista"));
-	                regista.setEtaRegista(rs.getString("etaRegista"));
+	                regista.setEtaRegista(rs.getInt("etaRegista"));
 	                registi.add(regista);
 	            }
 	        } catch (SQLException e) {
@@ -100,7 +99,7 @@ public class RegistaDao {
 	              regista.setIdRegista(rs.getInt("idRegista"));
 	              regista.setNomeRegista(rs.getString("nomeRegista"));
 	              regista.setCognomeRegista(rs.getString("cognomeRegista"));
-	              regista.setEtaRegista(rs.getString("etaRegista"));
+	              regista.setEtaRegista(rs.getInt("etaRegista"));
 	              
 	            }
 	        } catch (SQLException e) {

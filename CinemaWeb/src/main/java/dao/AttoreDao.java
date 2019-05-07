@@ -27,7 +27,7 @@ public class AttoreDao {
 	            // Parameters start with 1
 	            preparedStatement.setString(1, attore.getNomeAttore());
 	            preparedStatement.setString(2, attore.getCognomeAttore());
-	            preparedStatement.setString(3, attore.getEtaAttore());
+	            preparedStatement.setInt(3, attore.getEtaAttore());
 	            preparedStatement.executeUpdate();
 
 	        } catch (SQLException e) {
@@ -51,13 +51,12 @@ public class AttoreDao {
 	    public void updateAttore(Attore attore) {
 	        try {
 	            PreparedStatement preparedStatement = connection
-	                    .prepareStatement("update attore set nomeAttore=?, cognomeAttore=?, etaAttore=?" +
-	                            "where idAttore=?");
+	                    .prepareStatement("update attore set nomeAttore=?, cognomeAttore=?, etaAttore=? where idAttore=?");
 	            // Parameters start with 1
 	           
 	            preparedStatement.setString(1,attore.getNomeAttore());
 	            preparedStatement.setString(2, attore.getCognomeAttore());
-	            preparedStatement.setString(3, attore.getEtaAttore());
+	            preparedStatement.setInt(3, attore.getEtaAttore());
 	            preparedStatement.setInt(4, attore.getIdAttore());
 	            
 	            preparedStatement.executeUpdate();
@@ -77,7 +76,7 @@ public class AttoreDao {
 	                attore.setIdAttore(rs.getInt("idAttore"));
 	                attore.setNomeAttore(rs.getString("nomeAttore"));
 	                attore.setCognomeAttore(rs.getString("cognomeAttore"));
-	                attore.setEtaAttore(rs.getString("etaAttore"));
+	                attore.setEtaAttore(rs.getInt("etaAttore"));
 	                attori.add(attore);
 	            }
 	        } catch (SQLException e) {
@@ -99,7 +98,7 @@ public class AttoreDao {
 	                attore.setIdAttore(rs.getInt("idAttore"));
 	                attore.setNomeAttore(rs.getString("nomeAttore"));
 	                attore.setCognomeAttore(rs.getString("cognomeAttore"));
-	                attore.setEtaAttore(rs.getString("etaAttore"));
+	                attore.setEtaAttore(rs.getInt("etaAttore"));
 	            }
 	        } catch (SQLException e) {
 	            e.printStackTrace();

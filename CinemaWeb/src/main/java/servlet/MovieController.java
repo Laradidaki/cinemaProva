@@ -1,9 +1,11 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,61 +18,54 @@ import model.Film;
 /**
  * Servlet implementation class MovieController
  */
+@WebServlet("*.do")
 public class MovieController extends HttpServlet {
 	 private static final long serialVersionUID = 1L;
-	    private static String INSERT_OR_EDIT = "/film.jsp";
-	    private static String LISTA_FILM = "/listaFilm.jsp";
-	    private FilmDao dao;
+	    private FilmDao dao=new FilmDao();
+	 
 
-	    public MovieController() {
-	        super();
-	        dao = new FilmDao();
-	    }
 
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        String forward="";
-	        String action = request.getParameter("action");
-
-	        if (action.equalsIgnoreCase("delete")){
-	            int idFilm = Integer.parseInt(request.getParameter("idFilm"));
-	            dao.deleteFilm(idFilm);
-	            forward = LISTA_FILM;
-	            request.setAttribute("movies", dao.getAllFilm());    
-	        } else if (action.equalsIgnoreCase("edit")){
-	            forward = INSERT_OR_EDIT;
-	            int idFilm = Integer.parseInt(request.getParameter("idFilm"));
-	            Film film = dao.getFilmById(idFilm);
-	            request.setAttribute("film", film);
-	        } else if (action.equalsIgnoreCase("listaFilm")){
-	            forward = LISTA_FILM;
-	            request.setAttribute("movies", dao.getAllFilm());
-	        } else {
-	            forward = INSERT_OR_EDIT;
-	        }
-
-	        RequestDispatcher view = request.getRequestDispatcher(forward);
-	        view.forward(request, response);
-	    }
+	    	request.setCharacterEncoding("utf-8");
+			response.setContentType("text/html;charset=utf-8");
+			String url=request.getRequestURI();
+			String action=request.getRequestURI().substring(url.lastIndexOf('/')+1, url.lastIndexOf('.'));
+			
+			if("list".equals(action)){
+				List<Film> movies=dao.getAllFilm();
+				request.setAttribute("movies", movies);
+				request.getRequestDispatcher("/listaFilm.jsp").forward(request, response);
+			}
+			else if("add".equals(action)){
+				Film film= new Film();
+				 film.setNomeFilm(request.getParameter("nomeFilm"));
+			     film.setDurataFilm(request.getParameter("durataFilm"));
+			     film.setAnnoFilm(Integer.parseInt(request.getParameter("annoFilm")));
+			     film.setCostoFilm(Double.parseDouble(request.getParameter("costoFilm")));
+				dao.addFilm(film);
+				response.sendRedirect("list.do");
+			}else if("delete".equals(action)){
+				int idFilm=Integer.parseInt(request.getParameter("idFilm"));
+				dao.deleteFilm(idFilm);
+				response.sendRedirect("list.do");
+			}else if("load".equals(action)){
+				Film film=dao.getFilmById(Integer.parseInt(request.getParameter("idFilm")));
+				request.setAttribute("film", film);
+				request.getRequestDispatcher("/film.jsp").forward(request, response);
+			}else if("update".equals(action)){
+				Film film= new Film();
+				film.setIdFilm(Integer.parseInt(request.getParameter("idFilm")));
+				 film.setNomeFilm(request.getParameter("nomeFilm"));
+			        film.setDurataFilm(request.getParameter("durataFilm"));
+			        film.setAnnoFilm(Integer.parseInt(request.getParameter("annoFilm")));
+			        film.setCostoFilm(Double.parseDouble(request.getParameter("costoFilm")));
+				dao.updateFilm(film);
+				response.sendRedirect("list.do");
+			}
+		}
 
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        Film film = new Film();
-	        film.setNomeFilm(request.getParameter("nomeFilm"));
-	        film.setDurataFilm(request.getParameter("durataFilm"));
-	        film.setAnnoFilm(request.getParameter("annoFilm"));
-	        film.setCostoFilm(request.getParameter("costoFilm"));
-	        String idFilm = request.getParameter("idFilm");
-	        if(idFilm == null || idFilm.isEmpty())
-	        {
-	            dao.addFilm(film);
-	        }
-	        else
-	        {
-	            film.setIdFilm(Integer.parseInt(idFilm));
-	            dao.updateFilm(film);
-	        }
-	        RequestDispatcher view = request.getRequestDispatcher(LISTA_FILM);
-	        request.setAttribute("movies", dao.getAllFilm());
-	        view.forward(request, response);
-	    }
+	     doGet(request,response);
 
+}
 }

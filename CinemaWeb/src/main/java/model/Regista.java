@@ -7,7 +7,7 @@ public class Regista {
 	private Integer idRegista;
 	private String nomeRegista;
 	private String cognomeRegista;
-	private String etaRegista;
+	private Integer etaRegista;
 	private List<Regista>registi;
 	
 	
@@ -62,13 +62,13 @@ public class Regista {
 	/**
 	 * @return the etaRegista
 	 */
-	public String getEtaRegista() {
+	public Integer getEtaRegista() {
 		return etaRegista;
 	}
 	/**
 	 * @param etaRegista the etaRegista to set
 	 */
-	public void setEtaRegista(String etaRegista) {
+	public void setEtaRegista(Integer etaRegista) {
 		this.etaRegista = etaRegista;
 	}
 	

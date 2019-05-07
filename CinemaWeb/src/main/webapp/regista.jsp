@@ -8,8 +8,8 @@
 <title>Aggiungi Regista</title>
 </head>
 <body>
-<form method="POST" action='RegistaController' name="frmAddRegista">
-        Regista ID : <input type="text" readonly="readonly" name="idRegista"
+<form method="POST" action='update.doregista'>
+        Regista ID : <input type="hidden" readonly="readonly" name="idRegista"
             value="<c:out value="${regista.idRegista}" />" /> <br /> 
         Nome Regista : <input
             type="text" name="nomeRegista"
@@ -18,8 +18,8 @@
             type="text" name="cognomeRegista"
             value="<c:out value="${regista.cognomeRegista}" />" /> <br /> 
         Età Regista : <input type="text" name="etaRegista"
-            value="<c:out value="${regista.etaRegista}" />" /> <br /> <input
-            type="submit" value="Submit" />
+            value="<c:out value="${regista.etaRegista}" />" /> <br />
+             <input type="submit" value="Submit" />
     </form>
 
 </body>

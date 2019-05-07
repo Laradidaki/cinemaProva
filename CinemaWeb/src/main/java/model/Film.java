@@ -9,8 +9,8 @@ public class Film {
 	private Integer idFilm;
 	private String nomeFilm;
 	private String durataFilm;
-	private String annoFilm;
-	private String costoFilm;
+	private Integer annoFilm;
+	private Double costoFilm;
 	private List<Attore> attori;
 	private List<Regista> registi;
 	
@@ -92,25 +92,25 @@ public class Film {
 	/**
 	 * @return the annoFilm
 	 */
-	public String getAnnoFilm() {
+	public Integer getAnnoFilm() {
 		return annoFilm;
 	}
 	/**
 	 * @param annoFilm the annoFilm to set
 	 */
-	public void setAnnoFilm(String annoFilm) {
+	public void setAnnoFilm(Integer annoFilm) {
 		this.annoFilm = annoFilm;
 	}
 	/**
 	 * @return the costoFilm
 	 */
-	public String getCostoFilm() {
+	public Double getCostoFilm() {
 		return costoFilm;
 	}
 	/**
 	 * @param costoFilm the costoFilm to set
 	 */
-	public void setCostoFilm(String costoFilm) {
+	public void setCostoFilm(Double costoFilm) {
 		this.costoFilm = costoFilm;
 	}
 	

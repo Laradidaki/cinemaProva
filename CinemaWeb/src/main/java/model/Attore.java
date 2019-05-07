@@ -7,7 +7,7 @@ public class Attore {
 	private Integer idAttore;
 	private String nomeAttore;
 	private String cognomeAttore;
-	private String etaAttore;
+	private int etaAttore;
 	private List<Attore>attori;
 	
 	
@@ -62,13 +62,13 @@ public class Attore {
 	/**
 	 * @return the etaAttore
 	 */
-	public String getEtaAttore() {
+	public int getEtaAttore() {
 		return etaAttore;
 	}
 	/**
 	 * @param string the etaAttore to set
 	 */
-	public void setEtaAttore(String etaAttore) {
+	public void setEtaAttore(int etaAttore) {
 		this.etaAttore = etaAttore;
 	}
 	

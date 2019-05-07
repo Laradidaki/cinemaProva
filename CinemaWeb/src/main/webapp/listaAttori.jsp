@@ -6,12 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://fonts.googleapis.com/css?family=Akronim|Sofia|Stylish" rel="stylesheet">
 <title>Attori</title>
 <jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <jsp:include page="frammenti/html/bootstrap.html"></jsp:include>
 <style type="text/css">
+
 <jsp:include page="frammenti/css/table.css"></jsp:include>
-<jsp:include page="frammenti/css/navbar.css"></jsp:include>
 </style>
 </head>
 <body>
@@ -36,14 +37,14 @@
 					<td><c:out value="${attore.nomeAttore}" /></td>
 					<td><c:out value="${attore.cognomeAttore}" /></td>
 					<td><c:out value="${attore.etaAttore}" /></td>
-					 <td><a href="AttoreController?action=edit&idAttore=<c:out value="${attore.idAttore}"/>">Update</a></td>
-                    <td><a href="AttoreController?action=delete&idAttore=<c:out value="${attore.idAttore}"/>" onclick="return confirm('conferma cancellazione di ${attore.cognomeAttore}?')">Delete</a></td>
+				 <td><a href="load.doattore?idAttore=${attore.idAttore}">Update</a></td>
+                    <td><a href="delete.doattore?idAttore=${attore.idAttore}"  onclick="return confirm('conferma cancellazione di ${attore.cognomeAttore}?')" >Delete</a></td>
 					
 </tr>
 
 </c:forEach>
 </tbody>
 </table>
- <p><a href="AttoreController?action=insert">Aggiungi Attore</a></p>
+ <p><a href="addAttore.jsp">Aggiungi Attore</a></p>
 </body>
 </html>

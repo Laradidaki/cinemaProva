@@ -4,17 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Akronim|Sofia|Stylish" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Registi</title>
 <jsp:include page="frammenti/html/navbar.html"></jsp:include>
 <jsp:include page="frammenti/html/bootstrap.html"></jsp:include>
 <style type="text/css">
 <jsp:include page="frammenti/css/table.css"></jsp:include>
-<jsp:include page="frammenti/css/navbar.css"></jsp:include>
 </style>
 </head>
 <body>
-	
+
 <table class="blueTable" style="height: 150px;" width="406">
 <thead>
 <tr>
@@ -35,14 +35,14 @@
 					<td><c:out value="${regista.nomeRegista}" /></td>
 					<td><c:out value="${regista.cognomeRegista}" /></td>
 					<td><c:out value="${regista.etaRegista}" /></td>
-					 <td><a href="RegistaController?action=edit&idRegista=<c:out value="${regista.idRegista}"/>">Update</a></td>
-                    <td><a href="RegistaController?action=delete&idRegista=<c:out value="${regista.idRegista}"/>" onclick="return confirm('conferma cancellazione di ${regista.cognomeRegista}?')">Delete</a></td>
+					 <td><a href="load.doregista?idRegista=${regista.idRegista}">Update</a></td>
+                    <td><a href="delete.doregista?idRegista=${regista.idRegista}"  onclick="return confirm('conferma cancellazione di ${regista.cognomeRegista}?')" >Delete</a></td>
 					
 </tr>
 
 </c:forEach>
 </tbody>
 </table>
- <p><a href="RegistaController?action=insert">Aggiungi Regista</a></p>
+<a href="addRegista.jsp">Aggiungi Regista</a>
 </body>
 </html>

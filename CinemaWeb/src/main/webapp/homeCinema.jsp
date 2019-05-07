@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Insert title here</title>
 <style type="text/css">
-<jsp:include page="frammenti/css/navbar.css"></jsp:include>
 </style>
 </head>
 <body>
@@ -22,21 +21,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="frammenti/cinema1.jpg" class="d-block w-100" alt="...">
+        <img src="immagini/cinema1.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Libreria</h5>
           <p>Consulta la libreria dei Film</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="frammenti/batman2.jpg" class="d-block w-100" alt="...">
+        <img src="immagini/batman2.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Aggiungi un Film</h5>
           <p>Aggiungi un titolo ed inserisci il tuo commento</p>
         </div>
       </div>
       <div class="carousel-item"  style="object-fit: contain;">
-        <img src="frammenti/pulpFiction.jpg" class="d-block w-100" alt="...">
+        <img src="immagini/pulpFiction.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Prestito film</h5>
           <p>Scambia film con gli altri utenti.</p>

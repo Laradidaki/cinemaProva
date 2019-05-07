@@ -15,7 +15,7 @@ margin-left:630px;
 margin-top: 40px;
 color:white}
 .back {
-  background-image: url("frammenti/drive2.jpg");
+  background-image: url("immagini/drive2.jpg");
    background-repeat: no-repeat;
    background-size: cover;
     background-attachment: fixed !important;
