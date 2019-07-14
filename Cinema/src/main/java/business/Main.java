@@ -18,9 +18,9 @@ public class Main {
 		Main provaDb= new Main();
 		try {
 			//System.out.println(provaDb.getConnection().isClosed());
-			//provaDb.esSelect("Tom");
+			provaDb.esSelect("Tom");
 			//provaDb.esInsert("John", "Travolta",65);
-			provaDb.esUpdate();
+			//provaDb.esUpdate();
 			//provaDb.esDelete();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

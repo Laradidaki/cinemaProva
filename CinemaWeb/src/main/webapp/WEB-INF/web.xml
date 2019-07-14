@@ -119,4 +119,14 @@
     <servlet-name>DettaglioController</servlet-name>
     <url-pattern>/DettaglioController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>VerificaUtente</display-name>
+    <servlet-name>VerificaUtente</servlet-name>
+    <servlet-class>servlet.VerificaUtente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerificaUtente</servlet-name>
+    <url-pattern>/VerificaUtente</url-pattern>
+  </servlet-mapping>
 </web-app>

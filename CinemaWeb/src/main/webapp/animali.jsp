@@ -5,14 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+  <script type="text/javascript"
+     src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
 </head>
 <body>
-<ul>
-	<li><a href="listafilm.jsp">Mosta tutti i Film</a></li>
-	<li><a href="aggiungiFilm.jsp">Aggiungi un film</a></li>
-	
 
 
-</ul>
 </body>
 </html>

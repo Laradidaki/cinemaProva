@@ -45,19 +45,15 @@ public class Register extends HttpServlet {
 			String cognome=request.getParameter("cognome");
 			String username=request.getParameter("username");
 			String password=request.getParameter("password");
-			String sql="insert into utente(username, password, nome, cognome) values(?,?,?,?)";
+			String sql="insert into utente(nome, cognome, username, password) values(?,?,?,?)";
 			dbcon= new DBConnection();
 			connection=dbcon.getConnection();
-//			Utente utente= new Utente();
-//			utente.setNome(request.getParameter("nome"));
-//			utente.setCognome(request.getParameter("cognome"));
-//			utente.setUsername(request.getParameter("username"));
-//			utente.setPassword(request.getParameter("password"));
+
 			PreparedStatement ps=connection.prepareStatement(sql);
-			ps.setString(1, username);
-			ps.setString(2, password);
-			ps.setString(3, nome);
-			ps.setString(4, cognome);
+			ps.setString(1, nome);
+			ps.setString(2, cognome);
+			ps.setString(3, username);
+			ps.setString(4, password);
 			ps.executeUpdate();
 			
 			request.getRequestDispatcher("confermaRegistrazione.jsp").forward(request, response);
