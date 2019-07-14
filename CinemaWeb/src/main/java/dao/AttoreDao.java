@@ -30,8 +30,8 @@ public class AttoreDao {
 	            preparedStatement.setInt(3, attore.getEtaAttore());
 	            preparedStatement.executeUpdate();
 
-	        } catch (SQLException e) {
-	            e.printStackTrace();
+	        } catch (SQLException ex) {
+	            ex.printStackTrace();
 	        }
 	    }
 
